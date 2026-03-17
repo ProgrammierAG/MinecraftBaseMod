@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "minecraft-base-mod",
+	"version": "${version}",
+	"name": "Minecraft Base Mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/minecraft-base-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"minecraft_base_mod.MinecraftBaseMod"
+		],
+		"client": [
+			"minecraft_base_mod.MinecraftBaseModClient"
+		],
+		"fabric-datagen": [
+			"minecraft_base_mod.MinecraftBaseModDataGenerator"
+		]
+	},
+	"mixins": [
+		"minecraft-base-mod.mixins.json",
+		{
+			"config": "minecraft-base-mod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
