@@ -1,6 +1,7 @@
 package minecraft_base_mod;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import minecraft_base_mod.callbacks.SheepShearCallback;
 import minecraft_base_mod.commands.AbilityPointsCommands;
 import minecraft_base_mod.items.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -10,7 +11,6 @@ import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 public class MinecraftBaseMod implements ModInitializer {
     public static final String MOD_ID = "minecraft-base-mod";
@@ -25,7 +25,10 @@ public class MinecraftBaseMod implements ModInitializer {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
-        LOGGER.info("Hello Fabric world!");
+
+        LOGGER.info("Hello Fabric world! from: " + MOD_ID);
+
+        initializeCallbacks();
 
         AbilityPoints.initialize();
 
@@ -47,10 +50,14 @@ public class MinecraftBaseMod implements ModInitializer {
 
             root.then(Commands.literal("give")
                     .then(Commands.argument("player", EntityArgument.player())
-                    .then(Commands.argument("value", IntegerArgumentType.integer())
-                    .executes(AbilityPointsCommands::giveAbilityPoints))));
+                            .then(Commands.argument("value", IntegerArgumentType.integer())
+                                    .executes(AbilityPointsCommands::giveAbilityPoints))));
 
             dispatcher.register(root);
         });
+    }
+
+    public void initializeCallbacks(){
+        SheepShearCallback.initialize();
     }
 }
