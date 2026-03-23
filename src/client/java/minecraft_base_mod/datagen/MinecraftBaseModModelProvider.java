@@ -19,6 +19,7 @@ public class MinecraftBaseModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
         itemModelGenerator.generateFlatItem(ModItems.ENDER_ROD, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.ENDERITE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.ENDERITE_CHESTPLATE, ModelTemplates.FLAT_ITEM);
     }
 
     @Override

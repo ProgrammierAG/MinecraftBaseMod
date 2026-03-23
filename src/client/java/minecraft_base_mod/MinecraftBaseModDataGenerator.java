@@ -1,5 +1,6 @@
 package minecraft_base_mod;
 
+import minecraft_base_mod.datagen.MinecraftBaseModItemTagProvider;
 import minecraft_base_mod.datagen.MinecraftBaseModModelProvider;
 import minecraft_base_mod.datagen.MinecraftBaseModRecipeProvider;
 import minecraft_base_mod.datagen.lang.MinecraftBaseModEnglishLangProvider;
@@ -16,5 +17,6 @@ public class MinecraftBaseModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(MinecraftBaseModGermanLangProvider::new);
 		pack.addProvider(MinecraftBaseModModelProvider::new);
 		pack.addProvider(MinecraftBaseModRecipeProvider:: new);
+		pack.addProvider(MinecraftBaseModItemTagProvider:: new);
 	}
 }

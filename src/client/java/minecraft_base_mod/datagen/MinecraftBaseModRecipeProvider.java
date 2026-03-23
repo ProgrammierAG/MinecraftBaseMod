@@ -9,6 +9,8 @@ import net.minecraft.data.recipes.RecipeProvider;
 
 import java.util.concurrent.CompletableFuture;
 
+import static minecraft_base_mod.items.ModItems.ENDERITE;
+import static minecraft_base_mod.items.ModItems.ENDERITE_CHESTPLATE;
 import static minecraft_base_mod.items.ModItems.ENDER_ROD;
 import static net.minecraft.world.item.Items.ENDER_PEARL;
 import static net.minecraft.world.item.Items.GLOWSTONE_DUST;
@@ -34,6 +36,15 @@ public class MinecraftBaseModRecipeProvider extends FabricRecipeProvider {
                         .define('B', STICK)
                         .define('C', GLOWSTONE_DUST)
                         .unlockedBy(getHasName(ENDER_PEARL), has(GLOWSTONE_DUST))
+                        .save(output);
+
+                shaped(RecipeCategory.COMBAT, ENDERITE_CHESTPLATE)
+                        .pattern("ABA")
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .define('A', ENDERITE)
+                        .define('B', ENDER_PEARL)
+                        .unlockedBy(getHasName(ENDER_PEARL), has(ENDERITE))
                         .save(output);
             }
         };
