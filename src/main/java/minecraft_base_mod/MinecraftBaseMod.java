@@ -2,6 +2,7 @@ package minecraft_base_mod;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import minecraft_base_mod.commands.AbilityPointsCommands;
+import minecraft_base_mod.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
@@ -27,6 +28,8 @@ public class MinecraftBaseMod implements ModInitializer {
         LOGGER.info("Hello Fabric world!");
 
         AbilityPoints.initialize();
+
+        ModItems.initialize();
 
         PlayerBlockBreakEvents.AFTER.register((level, player, pos, state, blockEntity) -> {
             AbilityPoints.get(player).modifyAbilityPoints(1);
