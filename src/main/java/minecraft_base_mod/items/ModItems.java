@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 
 public class ModItems {
     public static final EnderRod ENDER_ROD = register(EnderRod::new);
+    public static final Enderite ENDERITE = register(Enderite::new);
 
     public static <T extends ModItem> T register(Supplier<T> itemFactory) {
         T item = itemFactory.get();
