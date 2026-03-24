@@ -1,5 +1,6 @@
 package minecraft_base_mod.datagen.lang;
 
+import minecraft_base_mod.items.AbilityOrb;
 import minecraft_base_mod.items.EnderRod;
 import minecraft_base_mod.items.Enderite;
 import minecraft_base_mod.items.EnderiteChestplate;
@@ -9,6 +10,7 @@ import net.minecraft.core.HolderLookup;
 
 import java.util.concurrent.CompletableFuture;
 
+import static minecraft_base_mod.items.ModItems.ABILITY_ORB;
 import static minecraft_base_mod.items.ModItems.ENDERITE;
 import static minecraft_base_mod.items.ModItems.ENDERITE_CHESTPLATE;
 import static minecraft_base_mod.items.ModItems.ENDER_ROD;
@@ -29,5 +31,9 @@ public class MinecraftBaseModGermanLangProvider extends FabricLanguageProvider {
         translationBuilder.add(EnderiteChestplate.TOOL_TIP_TRANSLATION_KEY, EnderiteChestplate.GERMAN_TOOL_TIP);
 
         translationBuilder.add(ENDERITE, Enderite.GERMAN_NAME);
+
+        translationBuilder.add(ABILITY_ORB, AbilityOrb.GERMAN_NAME);
+        translationBuilder.add(AbilityOrb.TOOL_TIP_TRANSLATION_KEY, AbilityOrb.GERMAN_TOOL_TIP);
+
     }
 }
