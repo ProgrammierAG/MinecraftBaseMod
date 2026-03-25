@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "minecraft-base-mod:enderite"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "minecraft-base-mod:enderite"
+      }
+    ]
+  }
+}
