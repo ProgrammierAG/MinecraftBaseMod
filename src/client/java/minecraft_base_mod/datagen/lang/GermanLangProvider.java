@@ -15,24 +15,25 @@ import static minecraft_base_mod.items.ModItems.ENDERITE;
 import static minecraft_base_mod.items.ModItems.ENDERITE_CHESTPLATE;
 import static minecraft_base_mod.items.ModItems.ENDER_ROD;
 
-public class MinecraftBaseModEnglishLangProvider extends FabricLanguageProvider {
-    public static final String LANGUAGE_CODE = "en_us";
+public class GermanLangProvider extends FabricLanguageProvider {
+    public static final String LANGUAGE_CODE = "de_de";
 
-    public MinecraftBaseModEnglishLangProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+    public GermanLangProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, LANGUAGE_CODE, registryLookup);
     }
 
     @Override
     public void generateTranslations(HolderLookup.Provider holderLookup, TranslationBuilder translationBuilder) {
-        translationBuilder.add(ENDER_ROD, EnderRod.ENGLISH_NAME);
+        translationBuilder.add(ENDER_ROD, EnderRod.GERMAN_NAME);
         translationBuilder.add(EnderRod.TOOL_TIP_TRANSLATION_KEY, EnderRod.TOOL_TIP);
 
-        translationBuilder.add(ENDERITE_CHESTPLATE, EnderiteChestplate.ENGLISH_NAME);
-        translationBuilder.add(EnderiteChestplate.TOOL_TIP_TRANSLATION_KEY, EnderiteChestplate.ENGLISH_TOOL_TIP);
+        translationBuilder.add(ENDERITE_CHESTPLATE, EnderiteChestplate.GERMAN_NAME);
+        translationBuilder.add(EnderiteChestplate.TOOL_TIP_TRANSLATION_KEY, EnderiteChestplate.GERMAN_TOOL_TIP);
 
-        translationBuilder.add(ENDERITE, Enderite.ENGLISH_NAME);
+        translationBuilder.add(ENDERITE, Enderite.GERMAN_NAME);
 
-        translationBuilder.add(ABILITY_ORB, AbilityOrb.ENGLISH_NAME);
-        translationBuilder.add(AbilityOrb.TOOL_TIP_TRANSLATION_KEY, AbilityOrb.ENGLISH_TOOL_TIP);
+        translationBuilder.add(ABILITY_ORB, AbilityOrb.GERMAN_NAME);
+        translationBuilder.add(AbilityOrb.TOOL_TIP_TRANSLATION_KEY, AbilityOrb.GERMAN_TOOL_TIP);
+
     }
 }

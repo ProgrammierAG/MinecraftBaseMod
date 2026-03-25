@@ -8,8 +8,8 @@ import net.minecraft.world.item.Items;
 
 import java.util.concurrent.CompletableFuture;
 
-public class MinecraftBaseModItemTagProvider extends FabricTagProvider.ItemTagProvider {
-    public MinecraftBaseModItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+public class ItemTagProvider extends FabricTagProvider.ItemTagProvider {
+    public ItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 

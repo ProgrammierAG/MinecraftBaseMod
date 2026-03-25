@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -18,16 +17,16 @@ import static net.minecraft.world.item.Items.ENDER_PEARL;
 import static net.minecraft.world.item.Items.GLOWSTONE_DUST;
 import static net.minecraft.world.item.Items.STICK;
 
-public class MinecraftBaseModRecipeProvider extends FabricRecipeProvider {
+public class RecipeProvider extends FabricRecipeProvider {
 
-    public MinecraftBaseModRecipeProvider(FabricDataOutput output,
-                                          CompletableFuture<HolderLookup.Provider> registriesFuture) {
+    public RecipeProvider(FabricDataOutput output,
+                          CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput output) {
-        return new RecipeProvider(registryLookup, output) {
+    protected net.minecraft.data.recipes.RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput output) {
+        return new net.minecraft.data.recipes.RecipeProvider(registryLookup, output) {
             @Override
             public void buildRecipes() {
                 shaped(RecipeCategory.TOOLS, ENDER_ROD)
