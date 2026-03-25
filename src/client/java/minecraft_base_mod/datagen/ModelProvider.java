@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
-import org.jspecify.annotations.NonNull;
 
 public class ModelProvider extends FabricModelProvider {
     public ModelProvider(FabricDataOutput output) {

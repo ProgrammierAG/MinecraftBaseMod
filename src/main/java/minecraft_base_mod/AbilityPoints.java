@@ -7,9 +7,6 @@ import net.fabricmc.fabric.api.attachment.v1.AttachmentTarget;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.resources.Identifier;
-import org.jspecify.annotations.Nullable;
-
-import java.util.function.UnaryOperator;
 
 public class AbilityPoints {
     public static final String ABILITY_POINTS_NAME = "ability_points";
