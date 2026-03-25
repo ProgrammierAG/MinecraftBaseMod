@@ -10,6 +10,7 @@ public class ModItems {
     public static final Enderite ENDERITE = register(Enderite::new);
     public static final EnderiteChestplate ENDERITE_CHESTPLATE = register(EnderiteChestplate::new);
     public static final AbilityOrb ABILITY_ORB = register(AbilityOrb::new);
+    public static final SmileyFace SMILEY_FACE = register(SmileyFace::new);
 
 
     public static <T extends ModItem> T register(Supplier<T> itemFactory) {

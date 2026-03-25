@@ -4,6 +4,7 @@ import minecraft_base_mod.items.AbilityOrb;
 import minecraft_base_mod.items.EnderRod;
 import minecraft_base_mod.items.Enderite;
 import minecraft_base_mod.items.EnderiteChestplate;
+import minecraft_base_mod.items.SmileyFace;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
@@ -14,6 +15,7 @@ import static minecraft_base_mod.items.ModItems.ABILITY_ORB;
 import static minecraft_base_mod.items.ModItems.ENDERITE;
 import static minecraft_base_mod.items.ModItems.ENDERITE_CHESTPLATE;
 import static minecraft_base_mod.items.ModItems.ENDER_ROD;
+import static minecraft_base_mod.items.ModItems.SMILEY_FACE;
 
 public class EnglishLangProvider extends FabricLanguageProvider {
     public static final String LANGUAGE_CODE = "en_us";
@@ -34,5 +36,7 @@ public class EnglishLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ABILITY_ORB, AbilityOrb.ENGLISH_NAME);
         translationBuilder.add(AbilityOrb.TOOL_TIP_TRANSLATION_KEY, AbilityOrb.ENGLISH_TOOL_TIP);
+
+        translationBuilder.add(SMILEY_FACE, SmileyFace.ENGLISH_NAME);
     }
 }

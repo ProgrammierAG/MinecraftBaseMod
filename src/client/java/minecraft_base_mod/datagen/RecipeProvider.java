@@ -1,11 +1,14 @@
 package minecraft_base_mod.datagen;
 
+import minecraft_base_mod.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.world.item.Items;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static minecraft_base_mod.items.ModItems.ABILITY_ORB;
@@ -56,6 +59,24 @@ public class RecipeProvider extends FabricRecipeProvider {
                         .define('B', DIAMOND)
                         .unlockedBy(getHasName(DIAMOND), has(ENDERITE))
                         .save(output);
+
+                oreSmelting(
+                        List.of(Items.GOLD_NUGGET), // Inputs
+                        RecipeCategory.MISC, // Category
+                        ModItems.SMILEY_FACE, // Output
+                        7000f, // Experience
+                        1, // Cooking time
+                        "gold_to_gold" // group
+                );
+
+                oreSmelting(
+                        List.of(ModItems.SMILEY_FACE), // Inputs
+                        RecipeCategory.MISC, // Category
+                        Items.GOLD_NUGGET, // Output
+                        7000f, // Experience
+                        10, // Cooking time
+                        "gold_to_gold" // group
+                );
             }
         };
     }
