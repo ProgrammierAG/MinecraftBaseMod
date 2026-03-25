@@ -2,12 +2,15 @@ package minecraft_base_mod;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import minecraft_base_mod.commands.AbilityPointsCommands;
+import minecraft_base_mod.components.EnderPearlComponent;
 import minecraft_base_mod.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.core.BlockPos;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,6 +31,8 @@ public class MinecraftBaseMod implements ModInitializer {
         LOGGER.info("Hello Fabric world!");
 
         AbilityPoints.initialize();
+        EnderPearlComponent.initialize();
+        Utils.initialize();
 
         ModItems.initialize();
 
@@ -52,5 +57,14 @@ public class MinecraftBaseMod implements ModInitializer {
 
             dispatcher.register(root);
         });
+
+//        AttackEntityCallback.EVENT.register((entity, source, amount, damageTaken) -> {
+//            if (!(entity instanceof PlayerEntity player)) return;
+//
+//            ItemStack chest = player.getEquippedStack(EquipmentSlot.CHEST);
+//            if (chest.getItem() instanceof WearerDamageListener listener) {
+//                listener.onWearerHurt(player, chest, source, amount);
+//            }
+//        });
     }
 }
