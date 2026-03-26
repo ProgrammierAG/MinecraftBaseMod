@@ -28,7 +28,6 @@ public class MinecraftBaseMod implements ModInitializer {
         LOGGER.info("Hello Fabric world!");
 
         AbilityPoints.initialize();
-
         ModItems.initialize();
 
         PlayerBlockBreakEvents.AFTER.register((level, player, pos, state, blockEntity) -> {
